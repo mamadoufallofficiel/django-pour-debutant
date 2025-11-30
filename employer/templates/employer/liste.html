@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Liste des Employés</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Poste</th>
+        <th>Salaire</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for employer in employers %}
+      <tr>
+        <td>{{ employer.nom }}</td>
+        <td>{{ employer.email }}</td>
+        <td>{{ employer.poste }}</td>
+        <td>{{ employer.salaire }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
