@@ -1,25 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Liste des Employés</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Nom</th>
-        <th>Email</th>
-        <th>Poste</th>
-        <th>Salaire</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for employer in employers %}
-      <tr>
-        <td>{{ employer.nom }}</td>
-        <td>{{ employer.email }}</td>
-        <td>{{ employer.poste }}</td>
-        <td>{{ employer.salaire }}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      <div class="w-full bg-base-200">
+        <div class="mb-4">
+            <a href="#" class="btn btn-primary w-full">Ajouter un nouvel employer</a>
+        </div>
+        <div class="space-y-4 w-full">
+            {% for employer in employers %}
+            <div class="p-4 bg-base-10 rounded-lg w-full flex justify-between items-center">
+                <div class="space-y-2">
+                    <p class="font-bold text-lg">{{ employer.nom }}</p>
+                     <p class="badge badge-soft badge-primary">{{ employer.email }}</p>
+                     <div class="flex gap-2">
+                        <p class="badge badge-soft badge-primary">{{ employer.poste }}</p>
+                        <p class="badge badge-dash badge-primary">{{ employer.salaire }} £</p>
+                     </div>
+                </div>
+                <div class="mb-4">
+                    <a href="#" class="btn btn-primary btn-soft btn-sm">Modifier</a>
+                    <a href="#" class="btn btn-primary btn-soft btn-sm">Supprimer</a>
+                </div>
+            </div>
+            
+            {% endfor %}
+        </div>
+      </div>
 {% endblock %}
