@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method="post" class="space-y-4">
+    {% csrf_token %}
+    <div class="mb-4">
+        <label for="id_nom" class="block text-sm font-medium text-gray-700">Nom</label>
+        {{ form.nom }}
+    </div>
+    <div class="mb-4">
+        <label for="id_email" class="block text-sm font-medium text-gray-700">Email</label>
+        {{ form.email }}
+    </div>
+    <div class="mb-4">
+        <label for="id_poste" class="block text-sm font-medium text-gray-700">Poste</label>
+        {{ form.poste }}
+    </div>
+    <div class="mb-4">
+        <label for="id_salaire" class="block text-sm font-medium text-gray-700">Salaire</label>
+        {{ form.salaire }}
+    </div>
+    <button type="submit" class="btn btn-primary w-full">Enregistrer</button>
+{% endblock %}

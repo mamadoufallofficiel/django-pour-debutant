@@ -3,7 +3,7 @@
 {% block content %}
       <div class="w-full bg-base-200">
         <div class="mb-4">
-            <a href="#" class="btn btn-primary w-full">Ajouter un nouvel employer</a>
+            <a href="{% url 'ajouter_employer' %}" class="btn btn-primary w-full">Ajouter un nouvel employer</a>
         </div>
         <div class="space-y-4 w-full">
             {% for employer in employers %}
